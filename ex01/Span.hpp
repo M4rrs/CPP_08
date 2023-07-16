@@ -5,9 +5,14 @@
 #include <algorithm>
 #include <cmath>
 
+#define CYAN "\033[36;1m"
+#define CLEAR "\033[0m"
+
 class Span {
 	private:
 		Span( void );
+		unsigned int _range;
+		unsigned int _count;
 		std::list<int> _span;
 
 	public:
@@ -21,6 +26,9 @@ class Span {
 		int longestSpan( void );
 
 		void fillSpan( int numRange );
+		void printSpan( void );
+		unsigned int getRange( void ) const;
+
 
 		class spanFull : public std::exception {
 			public:
