@@ -6,7 +6,7 @@
 /*   By: nnorazma <nnorazma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 18:28:12 by nnorazma          #+#    #+#             */
-/*   Updated: 2023/07/17 18:28:13 by nnorazma         ###   ########.fr       */
+/*   Updated: 2023/07/17 19:28:31 by nnorazma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 #include <iostream>
 #include <stack>
+
+#define CYAN "\033[36m"
+#define CLEAR "\033[0m"
 
 template<typename T> class MutantStack : public std::stack<T> {
 	public:
