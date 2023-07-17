@@ -7,7 +7,7 @@ Span::Span( void ) {
 }
 
 Span::Span( unsigned int N ) : _range(N) {
-	this->_count = 0;
+	this->spanCap = 0;
 	std::cout << "Constructed Span of size: " << N << std::endl;
 }
 
@@ -29,7 +29,7 @@ Span::Span( const Span &copy ) {
 Span &Span::operator=( const Span &assign ) {
 	this->_span.assign(assign._span.begin(), assign._span.end());
 	this->_range = assign._range;
-	this->_count = assign._count;
+	this->spanCap = assign.spanCap;
 	return (*this);
 }
 
@@ -39,12 +39,11 @@ Span &Span::operator=( const Span &assign ) {
 bool Span::addNumber( int num ) {
 
 	try {
-		if (this->_count == this->_range)
+		if (this->_span.size() == this->_range)
 			throw Span::spanFull();
 		else {
 			this->_span.push_back(num);
 			std::cout << "Added [" << num << "]" << std::endl;
-			this->_count++;
 		}
 		return(0);
 	}
@@ -54,17 +53,26 @@ bool Span::addNumber( int num ) {
 	}
 }
 
-void Span::fillSpan( int numRange ) {
-	// std::list<int>::iterator it;
+void Span::fillSpan( int *numArr, int size ) {
 
-	// for (it = this->_span.begin(); it != this->_span.end(); it++)
-	// 	if (addNumber(1 + (rand() % numRange)))
-	// 		break;
+	if (this->_range < (this->_span.size() + size)) {
+		size = this->_range - this->_span.size();
+		this->spanCap = 1;
+	}
+
+	this->_span.insert(this->_span.end(), numArr, numArr + size);
+	try {
+	if (spanCap)
+		throw Span::spanFull();
+	}
+	catch (Span::spanFull &e) {
+		std::cout << e.what() << std::endl;
+	}
 }
 
 int Span::shortestSpan( void ) {
 	std::list<int>::iterator it;
-	int temp = 0;
+	int temp = abs(*this->_span.begin() - *std::next(this->_span.begin()));
 	int result = abs(*this->_span.begin() - *std::next(this->_span.begin()));
 
 	if (this->_span.max_size() == 0 || this->_span.max_size() == 1 || this->_span.empty())

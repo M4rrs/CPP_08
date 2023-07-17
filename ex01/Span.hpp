@@ -12,7 +12,7 @@ class Span {
 	private:
 		Span( void );
 		unsigned int _range;
-		unsigned int _count;
+		bool spanCap;
 		std::list<int> _span;
 
 	public:
@@ -25,7 +25,7 @@ class Span {
 		int shortestSpan( void );
 		int longestSpan( void );
 
-		void fillSpan( int numRange );
+		void fillSpan( int *numArr, int size );
 		void printSpan( void );
 		unsigned int getRange( void ) const;
 

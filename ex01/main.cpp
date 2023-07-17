@@ -6,10 +6,15 @@ int main( void ) {
 	Span thing(5);
 	
 	std::cout << CYAN << "\n===== ADDING NUMBERS =====\n" << CLEAR << std::endl;
-	thing.addNumber(5);
-	thing.addNumber(7);
-	thing.addNumber(1);
-	thing.fillSpan(10);
+	thing.addNumber(10);
+	thing.addNumber(9);
+	thing.addNumber(18);
+
+	int thingArr[5];
+	for (int i = 0; i < (int)(sizeof(thingArr)/sizeof(int)); i++)
+		thingArr[i] = 1 + (rand() % 10);
+
+	thing.fillSpan(thingArr, (int)(sizeof(thingArr)/sizeof(int)));
 
 	std::cout << CYAN << "\n===== CURRENT SPAN VALUES =====\n" << CLEAR << std::endl;
 	thing.printSpan();
@@ -41,7 +46,10 @@ int main( void ) {
 	this2.printSpan();
 	std::cout << std::endl;
 
-	this2.fillSpan(50);
+	int arr1[50];
+	for (int i = 0; i < (int)(sizeof(arr1)/sizeof(int)); i++)
+		arr1[i] = 1 + (rand() % 10000);
+	this2.fillSpan(arr1, (int)(sizeof(arr1)/sizeof(int)));
 	std::cout << std::endl;
 
 	std::cout << "Original span: ";
@@ -64,23 +72,25 @@ int main( void ) {
 		std::cout << sp.longestSpan() << std::endl;
 
 	}
-	std::cout << CYAN << "\n===== INSANELY BIG PDF TEST REQUIREMENT?? =====\n" << CLEAR << std::endl;
-	Span big(10000);
-	std::cout << std::endl;
+	/* It looks disgusting, so uncomment if you really want to try*/
 
-	int arr[10000];
-	for (int i = 0; i < sizeof(arr)/sizeof(int); i++)
-		arr[i] = 1 + (rand() % 10000);
-	big.fillSpan(10000);
-	std::cout << std::endl;
+	// std::cout << CYAN << "\n===== INSANELY BIG PDF TEST REQUIREMENT?? =====\n" << CLEAR << std::endl;
+	// Span big(10000);
+	// std::cout << std::endl;
 
-	std::cout << "Big span values:" << std::endl;
-	big.printSpan();
-	std::cout << std::endl;
+	// int arr[12381];
+	// for (int i = 0; i < (int)(sizeof(arr)/sizeof(int)); i++)
+	// 	arr[i] = 1 + (rand() % 14023);
+	// big.fillSpan(arr, sizeof(arr)/sizeof(int));
+	// std::cout << std::endl;
 
-	std::cout << "Shortest span: " << thing.shortestSpan() << std::endl;
-	std::cout << "Longest span: "<< thing.longestSpan() << std::endl;
-	std::cout << std::endl;
+	// std::cout << "Big span values:" << std::endl;
+	// big.printSpan();
+	// std::cout << std::endl;
+
+	// std::cout << "Shortest span: " << big.shortestSpan() << std::endl;
+	// std::cout << "Longest span: "<< big.longestSpan() << std::endl;
+	// std::cout << std::endl;
 	
 	std::cout << CYAN << "\n===== DESTRUCTING =====\n" << CLEAR << std::endl;
 
