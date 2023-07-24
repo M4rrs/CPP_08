@@ -6,7 +6,7 @@
 /*   By: nnorazma <nnorazma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 18:28:08 by nnorazma          #+#    #+#             */
-/*   Updated: 2023/07/17 19:45:51 by nnorazma         ###   ########.fr       */
+/*   Updated: 2023/07/24 16:27:46 by nnorazma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int main()
 	std::cout << "Mstack begin: " << *it << std::endl;
 	++it;
 	--it;
-	std::cout << "Mstack end: " << *ite << std::endl;
+	std::cout << "(not necessary bcs end points to past the last element [garbage]) Mstack end: " << *ite << std::endl;
 	std::cout << std::endl;
 
 	while (it != ite)
@@ -82,7 +82,7 @@ int main()
 	std::cout << "Deq begin: " << *deqIt << std::endl;
 	++it;
 	--it;
-	std::cout << "Deq end: " << *deqIte << std::endl;
+	std::cout << "(not necessary bcs end points to past the last element [garbage]) Deq end: " << *deqIte << std::endl;
 	std::cout << std::endl;
 
 	while (deqIt != deqIte)

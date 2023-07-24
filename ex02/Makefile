@@ -6,14 +6,14 @@
 #    By: nnorazma <nnorazma@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/14 14:22:32 by nnorazma          #+#    #+#              #
-#    Updated: 2023/07/17 18:26:03 by nnorazma         ###   ########.fr        #
+#    Updated: 2023/07/24 16:20:19 by nnorazma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = MutantStack
 
 CC = c++
-FLAGS = -Wall -Werror -Wextra -I -fsanitize=address
+FLAGS = -Wall -Werror -Wextra -I -std=c++98 -fsanitize=address
 
 RM = rm -rf
 

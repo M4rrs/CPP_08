@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: m4rrs <m4rrs@student.42.fr>                +#+  +:+       +#+         #
+#    By: nnorazma <nnorazma@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/14 14:22:32 by nnorazma          #+#    #+#              #
-#    Updated: 2023/07/16 20:35:48 by m4rrs            ###   ########.fr        #
+#    Updated: 2023/07/24 16:16:33 by nnorazma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Span
 
 CC = c++
-FLAGS = -Wall -Werror -Wextra -I -fsanitize=address
+FLAGS = -Wall -Werror -Wextra -I -std=c++98 -fsanitize=address
 
 RM = rm -rf
 
